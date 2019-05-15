@@ -15,8 +15,16 @@ namespace testRep
         public Form1()
         {
             InitializeComponent();
-            Console.WriteLine("Hello");
-            Console.Read();
+            AutoCompleteStringCollection source = new AutoCompleteStringCollection()
+        {
+            "A",
+            "B",
+            "C",
+            "D"
+        };
+            textBox1.AutoCompleteCustomSource = source;
+            textBox1.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+            textBox1.AutoCompleteSource = AutoCompleteSource.CustomSource;
         }
     }
 }
